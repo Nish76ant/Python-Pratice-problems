@@ -1,0 +1,41 @@
+# Points 10
+
+# Your age in 2019
+
+# take input or age from the user year of birth
+# Determine age or year
+# and tell them when will they turn 100 years old
+# don't use any type of module
+
+# they can then optionally provide a year and your program must tell their age in particular year.
+
+# you should be handling all sorts of errors like
+# You are not yet born
+# You seem to be the oldest person alive
+# you can handle any other error if possible
+
+yearAge = int(input('What is your Age/Year of birth \n'))
+isAge = False
+isYear = False
+
+if len(str(yearAge)) == 4:
+    isYear = True
+
+else:
+    isAge = True
+
+if(yearAge<1900 and isYear):
+    print('You seem to be the oldest person alive')
+    exit()
+
+if yearAge>2020:
+    print('You are not yet born')
+    exit()
+
+if isAge:
+    yearAge = 2020-yearAge
+
+print(f'you will be 100 years old in {yearAge + 100}')
+
+interestedYear = int(input('Enter the year you want to know your age \n'))
+print(f'you will be {interestedYear - yearAge} years old in {interestedYear}')
