@@ -1,0 +1,46 @@
+#Foods and Calories
+"""
+you visit a resturant called Code with Nishant
+and fooditems in this restaurant
+food items in this restaurant are sorted based on their amount of calories
+you have to reverse this list of food items and their calories
+you have to use following three methods to reverse a list
+1.inbuilt method of python
+2.listname [::1]
+3.swapping first element with last one and second elements with second last one and so on..
+if these all method give same output then print this list
+
+Example - 
+input - Take a list as a input from the user.
+[5,4,1]
+output - [1,4,5]
+[1,4,5]
+[1,4,5]
+All the three method will gives same results
+"""
+#Take the size of the list from the user
+print('Enter the numbers of the list one by one \n')
+size = int(input('Enter size of list \n'))
+#Intialize a blank list
+mylist = []
+for i in range(size):
+    mylist.append(int(input('Enter list element \n')))
+print(f'your list is {mylist} \n')    
+
+reverse1 = mylist[:]
+reverse1.reverse()
+
+reverse2 = mylist[::-1]
+
+print(f'my First reverse list of {mylist} is {reverse1} \n')
+print(f"my Second reversed list of {mylist} is {reverse2} \n")
+
+reverse3 = mylist[:]
+for i in range(len(reverse3)//2):
+    reverse3[i],reverse3[len(reverse3)-i-1] = reverse3[len(reverse3)-i-1],reverse3[i]
+    print(f'the reversed list at i = {i} is {reverse3}')
+
+print(f"My third reversed list of my {mylist} is {reverse3}")
+
+if reverse1 == reverse2 and reverse2 == reverse3:
+    print("All three method gives same results")
