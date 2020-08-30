@@ -1,0 +1,27 @@
+#Python Practice Problem 2
+#Divide The Apples
+#Harry potter has got n number of apples .Harry has some students amont whom , he wants to distibute
+#the apple these n number of apples are provided to harry by his friend and he can request for
+#few more or few less apple,you need to print wheather a number in range mn to mx is a divisor of n or not
+#input - take input n ,mn and mx from the user
+#output
+#print whether the numbers b/w mn and mx are divisor of n or not
+#if mn = mx show that this is not the range and mn is eqal to mx show the result for that number
+#Example if n is 20 and mn=2 and mx = 5
+#2 is a divior of 20
+#3 is not a divisor of 20
+#-------
+#5 is a not divisor of 20
+
+apples = int(input('Enter the number of apples \n'))
+mn = int(input('Enter the minimum numbers to check \n'))
+mx = int(input('Enter the maximum numbers to check \n'))
+
+for i in range(mn,mx+1):
+    if apples%i == 0:
+        print(f"{i} is a divisor of {apples}")
+    else:
+        print(f"{i} is not a divisor of {apples}")  
+
+if mn == mx:
+    print('Make sure entered mn,mx should be not eqal')        
