@@ -1,0 +1,73 @@
+# Guess The number
+
+"""
+Genrate a random number from a to b (integer)
+You and Your friends have to guess a number between
+two numbers a and b ,a and b are inputs takes by user
+Your friend is player first ,he will have to keep choosing the number
+and your program must tell wheather the number is greater than the actual
+number or less than the number
+log the number of the trials it took your friend to arrive at the number
+You play the same game and then person with minimum trials win
+
+input - 
+Randomly genrate a number and don't show the user
+a = 4
+b = 13
+Enter the value of a
+Enter the value of b
+
+Output - 
+Player 1 - Please Guess the Number between 4 and 13
+5
+Wrong Guess a greater number again
+8
+Wrong guess a smaller number again
+6
+Correct you took 3 trials to guess the number
+
+Player 2 -
+
+-
+
+
+-
+
+-
+Correct you took 7 trials to guess the number
+Player 1 Win
+"""
+
+import random
+def guessGame(a,b,actual):
+    guess = int(input(f"Guess a number between {a} and {b} \n"))
+    nguess = 1
+    while guess != actual:
+        if guess<actual:
+            guess = int(input(f"Enter the bigger number \n"))
+            nguess += 1
+        else:
+            guess = int(input(f"Enter a smaller number"))
+            nguess += 1
+    print(f"you guessed the number in {nguess} guesses \n")
+    return nguess
+
+if __name__ == '__main__':
+    a = int(input("Enter the value of a \n"))
+    b = int(input("Enter the value of b \n"))
+    actual1 = random.randint(a,b)
+    print("Playes 1's turn \n")
+    g1 = guessGame(a,b,actual1)
+    print("Player 2's tun \n")
+    actual2 = random.randint(a,b)
+    g2 = guessGame(a,b,actual2)
+
+    if g1<g2:
+        print("Player 1 won the match !\n")
+
+    if g1>g2:
+        print("Player 2 won the match ! \n")  
+    else:
+        print('ITS a Tie \n')
+
+    print(f"The number for player 1 was {actual1} and for player 2 was {actual2}")           
